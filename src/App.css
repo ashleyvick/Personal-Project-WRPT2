@@ -1,0 +1,35 @@
+.App {
+  align-items: center;
+}
+
+.navbar {
+  padding: 20px;
+  border-bottom: 3px solid black;
+}
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: flex-end;
+  font-family: "Elsie", cursive;
+  color: black;
+  font-size: 20pt;
+  margin-left: 50%;
+}
+
+.title-link {
+  font-family: "Yellowtail", cursive;
+  font-size: 50pt;
+  color: rgb(34, 110, 34);
+  align-items: flex-start;
+  margin: 5%;
+  text-decoration: none;
+}
+
+.links {
+  text-decoration: none;
+}
+.links:hover {
+  text-decoration: underline;
+}
