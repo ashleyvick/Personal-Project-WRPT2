@@ -11,7 +11,7 @@ class Events extends Component {
   render() {
     return (
       <div>
-        <h1>Events</h1>
+        <h1 className="page-title">Events</h1>
       </div>
     );
   }
