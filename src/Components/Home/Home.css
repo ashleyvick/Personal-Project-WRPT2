@@ -1,0 +1,13 @@
+.home-carousel {
+  height: 700px;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-content: center;
+}
+
+.img-small {
+  height: 50px;
+  width: 50px;
+}
