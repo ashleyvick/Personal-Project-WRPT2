@@ -1,6 +1,6 @@
-INSERT INTO newUsers(username, email, password, first_name, last_name, phone_number)
+INSERT INTO newUsers(username, email, password, first_name, last_name, phone_number, is_subscribed_email, is_subscribed_text)
 
-VALUES (${username}, ${email}, ${hash}, ${first_name}, ${last_name}, ${phone_number})
+VALUES (${username}, ${email}, ${hash}, ${firstName}, ${lastName}, ${phoneNumber}, ${isSubEmail}, ${isSubText})
 
 returning user_id, email;
 

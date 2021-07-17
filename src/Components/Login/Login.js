@@ -20,12 +20,17 @@ const Login = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("/auth/login", authInfo).then((response) => {
-      console.log(response);
-      dispatch(updateUsername(authInfo.username));
+    axios
+      .post("/auth/login", authInfo)
+      .then((response) => {
+        console.log(response);
+        dispatch(updateUsername(authInfo.username));
 
-      props.history.push("/reservations");
-    });
+        props.history.push("/reservations");
+      })
+      .catch((e) => {
+        alert("Username or password is incorrect");
+      });
   };
 
   return (

@@ -10,11 +10,14 @@ const Reservations = (props) => {
   useEffect(() => {
     axios.get("/api/user").then((response) => {
       console.log(response);
+      setUsername(response.data.username);
       if (response.data === "") {
         this.props.history.push("/login");
       }
     });
   }, []);
+
+  const [username, setUsername] = useState("");
 
   // const handleSubmit = (e) => {
   //   e.preventDefault();
@@ -28,11 +31,18 @@ const Reservations = (props) => {
   //     });
   // };
 
+  //WORK ON EDIT PROFILE BUTTON!
+
+  const handleEditProfile = (e) => {
+    e.preventDefault();
+    props.history.push("/profile_settings/:id");
+  };
+
   return (
     <div>
       <header className="user-info">
-        <h3>Welcome Back, (user) </h3>
-        <button>Edit Profile</button>
+        <h3 value={username}>Welcome Back, {username} </h3>
+        <button onClick={handleEditProfile}>Edit Profile</button>
         <br></br>
         <br></br>
         <h4>Current Reservations: (axios.get/reservations) </h4>

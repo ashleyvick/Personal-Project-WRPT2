@@ -9,6 +9,8 @@ const Register = (props) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [isSubEmail, setSubEmail] = useState(false);
+  const [isSubText, setSubText] = useState(false);
   const [error, setError] = useState("");
 
   const handleSetUsername = (e) => setUsername(e.target.value);
@@ -23,10 +25,22 @@ const Register = (props) => {
     e.preventDefault();
     if (password === confirmPassword) {
       axios
-        .post("/auth/register", { username, email, password })
+        .post("/auth/register", {
+          username,
+          email,
+          password,
+          firstName,
+          lastName,
+          phoneNumber,
+          isSubEmail,
+          isSubText,
+        })
         .then((response) => {
           console.log(response);
-          props.history.push("/reservations");
+          alert(
+            "You have successfully registered! Login to your account to make a future reservation"
+          );
+          props.history.push("/login");
         });
     } else {
       setError("One of your passwords does not match");
@@ -83,13 +97,21 @@ const Register = (props) => {
         <br></br>
         {/* How do I create a field for the title for the checked box?  */}
         <div>
-          <input type="checkbox" id="accept" />
+          <input
+            type="checkbox"
+            id="accept"
+            onClick={() => setSubEmail(!isSubEmail)}
+          />
           <span>
             I would like to receive EMAILS about upcoming promotions and events
           </span>
         </div>
         <div>
-          <input type="checkbox" id="accept" />
+          <input
+            type="checkbox"
+            id="accept"
+            onClick={() => setSubText(!isSubText)}
+          />
           <span>
             I would like to receive TEXT messages about upcoming promotions and
             events

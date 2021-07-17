@@ -6,6 +6,8 @@ CREATE TABLE newUsers (
     first_name VARCHAR (200),
     last_name VARCHAR (200),
     phone_number VARCHAR (45)
+    is_Subscribed_email BOOL
+    is_Subscribed_text BOOL
 )
 
 -- table created successfully in SQL TABS 7/3/2021
