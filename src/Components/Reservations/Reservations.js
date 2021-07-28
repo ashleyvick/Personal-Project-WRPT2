@@ -12,12 +12,30 @@ const Reservations = (props) => {
       console.log(response);
       setUsername(response.data.username);
       if (response.data === "") {
-        this.props.history.push("/login");
+        props.history.push("/login");
       }
+    });
+    axios.get("/api/reservation").then((response) => {
+      console.log(response);
+      var date = new Date(response.data[0].reservation_date);
+      const [month, day, year] = [
+        date.getMonth(),
+        date.getDate(),
+        date.getFullYear(),
+      ];
+
+      setDate(month + "/" + day + "/" + year);
+      setTime(response.data[0].reservation_time.substring(0, 5));
+      setAdults(response.data[0].party_adults);
+      setChildren(response.data[0].party_children);
     });
   }, []);
 
   const [username, setUsername] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [adults, setAdults] = useState("");
+  const [children, setChildren] = useState("");
 
   // const handleSubmit = (e) => {
   //   e.preventDefault();
@@ -31,7 +49,13 @@ const Reservations = (props) => {
   //     });
   // };
 
-  //WORK ON EDIT PROFILE BUTTON!
+  const handleCancelReservation = (e) => {
+    e.preventDefault();
+    axios.delete("api/reservation").then((response) => {
+      console.log(response);
+      alert("Your reservation has been canceled.");
+    });
+  };
 
   const handleEditProfile = (e) => {
     e.preventDefault();
@@ -45,10 +69,22 @@ const Reservations = (props) => {
         <button onClick={handleEditProfile}>Edit Profile</button>
         <br></br>
         <br></br>
-        <h4>Current Reservations: (axios.get/reservations) </h4>
+
+        <div>
+          <h4>Current Reservations:</h4>
+          <h5 value={date}>Date: {date}</h5>
+          <h5 value={time}>Time: {time}</h5>
+          <h5 value={adults}>Adults: {adults}</h5>
+          <h5 value={children}>Children: {children}</h5>
+        </div>
+
         <br></br>
-        <button className="cancel-reservation">Cancel Reservation</button>
-        {/* delete reservation */}
+        <button
+          onClick={handleCancelReservation}
+          className="cancel-reservation"
+        >
+          Cancel Reservation
+        </button>
       </header>
 
       <div className="title">

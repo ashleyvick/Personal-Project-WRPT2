@@ -5,6 +5,11 @@ const session = require("express-session");
 const app = express();
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 const { register, login, logout, getUser, editUser } = require("./authCtrl");
+const {
+  makeReservation,
+  cancelReservation,
+  getReservations,
+} = require("./reservationCtrl");
 
 app.use(express.json());
 app.use(
@@ -36,3 +41,8 @@ app.post("/auth/login", login);
 app.put("/api/edituser", editUser);
 app.get("/api/logout", logout);
 app.get("/api/user", getUser);
+
+//Reservation Endpoints
+app.get("/api/reservation", getReservations);
+app.post("/api/reservation", makeReservation);
+app.delete("/api/reservation", cancelReservation);
