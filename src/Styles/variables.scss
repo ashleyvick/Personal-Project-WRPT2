@@ -1,0 +1,26 @@
+$buttonText: "Elsie", cursive;
+
+@mixin hoverEffects {
+  color: black;
+  transform: scale(1.1);
+  text-decoration: underline;
+  transition: all 0.3s ease 0s;
+}
+
+@mixin quoteText {
+  font-family: "MonteCarlo", cursive;
+  font-style: bold;
+  font-size: 20pt;
+  color: rgb(75, 2, 75);
+  line-height: 1.2;
+  word-spacing: 3px;
+}
+
+@mixin text {
+  font-size: 14pt;
+  color: rgb(75, 2, 75);
+  line-height: 1.2;
+  word-spacing: 3px;
+  display: flex;
+  align-items: center;
+}

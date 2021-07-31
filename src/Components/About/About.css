@@ -1,0 +1,74 @@
+.About {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-title {
+  margin-top: 20px;
+  font-family: "Elsie", cursive;
+  color: black;
+  font-size: 25pt;
+}
+
+.about {
+  font-size: 14pt;
+  color: #4b024b;
+  line-height: 1.2;
+  word-spacing: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Elsie", cursive;
+  color: black;
+  height: 40%;
+  width: 90%;
+  margin: 40px;
+}
+
+.reviews-title {
+  font-family: "Elsie", cursive;
+  color: black;
+  font-size: 25pt;
+}
+
+.reviews {
+  font-size: 14pt;
+  color: #4b024b;
+  line-height: 1.2;
+  word-spacing: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Yellowtail", cursive;
+  color: black;
+  font-style: italic;
+  width: 100vw;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  margin: 50px;
+}
+/*# sourceMappingURL=About.css.map */

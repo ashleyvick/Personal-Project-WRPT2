@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Route, Switch } from "react-router-dom";
 import axios from "axios";
+import "./UserAccount.scss";
 
 const UserAccount = (props) => {
   useEffect(() => {

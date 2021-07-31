@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Route, Switch } from "react-router-dom";
 import Login from "../Login/Login";
 import Reservations1 from "./Reservations1.jpg";
-import "./Reservations.css";
+import "./Reservations.scss";
 
 const Reservations = (props) => {
   useEffect(() => {

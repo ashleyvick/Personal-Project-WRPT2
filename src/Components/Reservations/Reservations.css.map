@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,MAAM,CAAC;EACL,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,UAAU;EAC3B,WAAW,EAAE,UAAU;EACvB,cAAc,EAAE,GAAG;EACnB,aAAa,EAAE,aAAa;CAC7B",
+    "sources": [
+        "Reservations.scss",
+        "../../Styles/variables.scss"
+    ],
+    "names": [],
+    "file": "Reservations.css"
+}

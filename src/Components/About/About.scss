@@ -1,0 +1,44 @@
+@import "../../Styles/variables.scss";
+
+.About {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-title {
+  margin-top: 20px;
+  font-family: $buttonText;
+  color: black;
+  font-size: 25pt;
+}
+
+.about {
+  @include text();
+  font-family: $buttonText;
+  color: black;
+  height: 40%;
+  width: 90%;
+  margin: 40px;
+}
+
+.reviews-title {
+  font-family: $buttonText;
+  color: black;
+  font-size: 25pt;
+}
+
+.reviews {
+  width: 100vw;
+  @include text();
+  display: flex;
+  flex-direction: row;
+  font-family: "Yellowtail", cursive;
+  color: black;
+  font-style: italic;
+
+  align-content: space-between;
+  margin: 50px;
+}

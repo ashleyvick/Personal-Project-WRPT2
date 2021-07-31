@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "Register.scss",
+        "../../Styles/variables.scss"
+    ],
+    "names": [],
+    "file": "Register.css"
+}

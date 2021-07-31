@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "UserAccount.scss",
+        "../../Styles/variables.scss"
+    ],
+    "names": [],
+    "file": "UserAccount.css"
+}

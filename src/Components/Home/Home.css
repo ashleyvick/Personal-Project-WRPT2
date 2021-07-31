@@ -1,13 +1,44 @@
 .home-carousel {
-  height: 700px;
+  height: 600px;
   width: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  flex-flow: column;
-  align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .img-small {
   height: 50px;
   width: 50px;
 }
+
+.page-quote {
+  height: 100px;
+  width: 50%;
+  font-family: "Yellowtail", cursive;
+  font-size: 14pt;
+  color: #4b024b;
+  margin-top: 5%;
+  margin-left: 12%;
+  padding: 10px;
+  line-height: 1.2;
+  word-spacing: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5%;
+  margin-left: 12%;
+  padding: 10px;
+}
+/*# sourceMappingURL=Home.css.map */

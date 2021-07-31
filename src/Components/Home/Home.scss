@@ -1,0 +1,29 @@
+@import "../../Styles/variables.scss";
+
+.body {
+  padding: 20px;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.home-carousel {
+  height: 50vh;
+  width: 50vw;
+}
+
+.img-small {
+  height: 50px;
+  width: 50px;
+}
+
+.page-quote {
+  @include quoteText();
+  margin-bottom: 50px;
+  margin-left: 100px;
+}
+
+.commitment {
+  margin: 100px;
+}

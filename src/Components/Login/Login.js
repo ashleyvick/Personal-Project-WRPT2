@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Route, Switch } from "react-router-dom";
-import "./Login.css";
+import "./Login.scss";
 import { updateUsername } from "../../Store/reducer";
 import Login1 from "./Login1.jpg";
 

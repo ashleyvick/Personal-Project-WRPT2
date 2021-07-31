@@ -1,0 +1,9 @@
+@import "../../Styles/variables.scss";
+
+.title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  align-content: space-between;
+}
