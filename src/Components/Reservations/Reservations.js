@@ -64,67 +64,72 @@ const Reservations = (props) => {
 
   return (
     <div>
-      <header className="user-info">
-        <h3 value={username}>Welcome Back, {username} </h3>
-        <button onClick={handleEditProfile}>Edit Profile</button>
-        <br></br>
-        <br></br>
+      <div className="body">
+        <div className="top-box">
+          <h1 className="page-title">Reservations</h1>
+          <header className="user-info">
+            <h3 value={username}>Welcome Back, {username} </h3>
+            <button className="user-button" onClick={handleEditProfile}>
+              Edit Profile
+            </button>
+            <br></br>
+            <br></br>
 
-        <div>
-          <h4>Current Reservations:</h4>
-          <h5 value={date}>Date: {date}</h5>
-          <h5 value={time}>Time: {time}</h5>
-          <h5 value={adults}>Adults: {adults}</h5>
-          <h5 value={children}>Children: {children}</h5>
+            <div>
+              <h4>**Current Reservations** </h4>
+              <h5 value={date}>Date: {date}</h5>
+              <h5 value={time}>Time: {time}</h5>
+              <h5 value={adults}>Adults: {adults}</h5>
+              <h5 value={children}>Children: {children}</h5>
+            </div>
+
+            <br></br>
+            <button className="user-button" onClick={handleCancelReservation}>
+              Cancel Reservation
+            </button>
+          </header>
         </div>
 
-        <br></br>
-        <button
-          onClick={handleCancelReservation}
-          className="cancel-reservation"
-        >
-          Cancel Reservation
-        </button>
-      </header>
+        <div className="bottom-box">
+          <form className="reservation-form">
+            <h1 className="makeRes">Make a Reservation</h1>
+            <br></br>
 
-      <div className="title">
-        <h1>Reservations</h1>
-        <h2 className="page-quote">
-          “A garden is a delight to the eye and a solace for the soul.” ― Saadi
-        </h2>
-        <img
-          className="res-image"
-          src={Reservations1}
-          style={{ height: "400px", width: "350px" }}
-        />
-      </div>
+            <div style={{ display: "grid", width: "100px" }}>
+              <label> Date </label>
+              <select title="Date"></select>
+            </div>
+            <br></br>
 
-      <div className="reservation-div">
-        <form className="reservation-form">
-          <h1>Make a Reservation</h1>
-          <br></br>
+            <div style={{ display: "grid", width: "100px" }}>
+              <label> Time </label>
+              <select title="Time"></select>
+            </div>
+            <br></br>
 
-          <div style={{ display: "grid", width: "100px" }}>
-            <label> Date </label>
-            <select title="Date"></select>
+            <div style={{ display: "grid", width: "100px" }}>
+              <label> Party </label>
+              <select title="Adults" placeholder="Adults" />
+              <br></br>
+              <select title="Children" placeholder="Children" />
+            </div>
+            <br></br>
+
+            <button className="button">Save Reservation</button>
+          </form>
+
+          <div className="quote/image">
+            <h2 className="page-quote">
+              “A garden is a delight to the eye and a solace for the soul.” ―
+              Saadi
+            </h2>
+            <img
+              className="res-image"
+              src={Reservations1}
+              style={{ height: "400px", width: "350px" }}
+            />
           </div>
-          <br></br>
-
-          <div style={{ display: "grid", width: "100px" }}>
-            <label> Time </label>
-            <select title="Time"></select>
-          </div>
-          <br></br>
-
-          <div style={{ display: "grid", width: "100px" }}>
-            <label> Party </label>
-            <select title="Adults" placeholder="Adults" />
-            <select title="Children" placeholder="Children" />
-          </div>
-          <br></br>
-
-          <button>Save Reservation</button>
-        </form>
+        </div>
       </div>
     </div>
   );

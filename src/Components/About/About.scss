@@ -10,14 +10,14 @@
 
 .page-title {
   margin-top: 20px;
-  font-family: $buttonText;
+  font-family: $mainText;
   color: black;
   font-size: 25pt;
 }
 
 .about {
   @include text();
-  font-family: $buttonText;
+  font-family: $mainText;
   color: black;
   height: 40%;
   width: 90%;
@@ -25,7 +25,7 @@
 }
 
 .reviews-title {
-  font-family: $buttonText;
+  font-family: $mainText;
   color: black;
   font-size: 25pt;
 }

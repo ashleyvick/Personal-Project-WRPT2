@@ -1,9 +1,46 @@
 @import "../../Styles/variables.scss";
 
-.title {
+.body {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
   flex-direction: row;
-  align-content: space-between;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-box {
+  display: flex;
+  width: 100vw;
+  margin-left: 40%;
+  justify-content: space-evenly;
+  font-family: $mainText;
+  @include text();
+  font-size: 10pt;
+  align-items: flex-start;
+}
+
+.bottom-box {
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+  margin: 50px;
+}
+
+.reservation-form {
+  width: 50%;
+  font-family: $mainText;
+  font-size: 20pt;
+}
+
+.user-button {
+  font-family: $buttonText;
+  background: rgb(213, 187, 236);
+  color: black;
+}
+
+.makeRes {
+  font-size: 25pt;
+  text-decoration: underline;
+  margin-left: 20%;
+  width: 100%;
 }

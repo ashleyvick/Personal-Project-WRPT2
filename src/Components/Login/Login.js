@@ -6,6 +6,7 @@ import { Route, Switch } from "react-router-dom";
 import "./Login.scss";
 import { updateUsername } from "../../Store/reducer";
 import Login1 from "./Login1.jpg";
+import login from "./Login.scss";
 
 const Login = (props) => {
   const [authInfo, setAuthInfo] = useState({ username: "", password: "" });
@@ -51,7 +52,7 @@ const Login = (props) => {
           type="password"
           onChange={handleChange}
         />
-        <button>Submit</button>
+        <button className="button">Submit</button>
 
         <Link to={"/register"} className="links">
           Register New User

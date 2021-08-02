@@ -1,1 +1,8 @@
 @import "../../Styles/variables.scss";
+
+.button {
+  font-family: $buttonText;
+  padding: 5px;
+  background: rgb(154, 98, 206);
+  color: white;
+}
