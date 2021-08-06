@@ -1,1 +1,6 @@
-@import "./Styles/variables.scss";
+@import "../../Styles/variables.scss";
+
+.contact-body {
+  @include flexBody();
+  @include text();
+}

@@ -5,9 +5,10 @@ module.exports = {
       const { date, time, adults, children } = req.body;
       const { user_id } = req.session.user;
       console.log(user_id);
+      const newDate = new Date(date);
       await db.reservations.make_reservation({
         user_id,
-        date,
+        date: newDate.getTime(),
         time,
         adults,
         children,
