@@ -7,7 +7,7 @@ const checkUniqueUsernameAndEmail = async (db, username, email) => {
   let [{ count: emailCount }] = await db.auth.check_user_by_email({
     email,
   });
-  return +usernameCount === 0 || +emailCount === 0;
+  return +usernameCount === 0 && +emailCount === 0;
 };
 
 module.exports = {
@@ -30,7 +30,7 @@ module.exports = {
     // let [{ count: emailCount }] = await db.auth.check_user_by_email({
     //   email,
     // });
-    const isUnique = checkUniqueUsernameAndEmail(db, username, email);
+    const isUnique = await checkUniqueUsernameAndEmail(db, username, email);
     if (!isUnique) {
       res
         .status(400)

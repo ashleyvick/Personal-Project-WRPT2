@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { Route, Switch } from "react-router-dom";
-import contact from "./Contact.scss";
+import "./Contact.scss";
 
 class Contact extends Component {
   constructor() {

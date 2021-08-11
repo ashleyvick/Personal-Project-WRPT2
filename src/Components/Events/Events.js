@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { Route, Switch } from "react-router-dom";
-import events from "./Events.scss";
+import "./Events.scss";
+
+/// write this component with css in js
 
 class Events extends Component {
   constructor() {

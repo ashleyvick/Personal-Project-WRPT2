@@ -19,13 +19,13 @@ const Reservations = (props) => {
       if (response.data[0]) {
         console.log(response);
         var date = new Date(response.data[0].reservation_date);
-        const [month, day, year] = [
-          date.getMonth(),
-          date.getDate(),
-          date.getFullYear(),
-        ];
+        // const [month, day, year] = [
+        //   date.getMonth(),
+        //   date.getDate(),
+        //   date.getFullYear(),
+        // ];
 
-        setDate(month + "/" + day + "/" + year);
+        setDate(date.toLocaleString().split(",")[0]);
         setTime(response.data[0].reservation_time.substring(0, 5));
         setAdults(response.data[0].party_adults);
         setChildren(response.data[0].party_children);
@@ -181,7 +181,7 @@ const Reservations = (props) => {
                 placeholder="Adults"
                 onChange={handleSetAdults}
               >
-                <option>0</option>
+                <option> </option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -200,7 +200,7 @@ const Reservations = (props) => {
                 placeholder="Children"
                 onChange={handleSetChildren}
               >
-                <option> </option>
+                <option>0</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>

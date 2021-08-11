@@ -42,6 +42,10 @@ const Register = (props) => {
             "You have successfully registered! Login to your account to make a future reservation"
           );
           props.history.push("/login");
+        })
+        .catch((response) => {
+          console.log(response);
+          alert("That username or email has been taken. Please try another");
         });
     } else {
       setError("One of your passwords does not match");
