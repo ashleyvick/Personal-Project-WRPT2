@@ -33,7 +33,7 @@ const Login = (props) => {
   };
 
   return (
-    <div>
+    <div className="login-body">
       <h1 className="page-title">Login</h1>
       <h2 className="page-header">
         We do not accept walk-ins. <br></br>To make a reservation, please Login

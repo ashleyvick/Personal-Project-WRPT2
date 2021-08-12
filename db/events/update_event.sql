@@ -2,7 +2,7 @@ UPDATE events
 
 SET 
 event_name = ${event_name},
-event_date = ${event_date},
+event_date = to_timestamp(${event_date}/1000),
 event_startTime = ${event_startTime},
 event_endTime = ${event_endTime}
 

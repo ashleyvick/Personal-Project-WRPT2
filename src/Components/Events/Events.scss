@@ -2,4 +2,7 @@
 
 .events-body {
   @include flexBody();
+  h1 {
+    @include title();
+  }
 }

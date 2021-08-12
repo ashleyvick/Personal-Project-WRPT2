@@ -6,13 +6,12 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-}
-
-.page-title {
-  margin-top: 20px;
-  font-family: $mainText;
-  color: black;
-  font-size: 30pt;
+  h1 {
+    @include title();
+  }
+  h2 {
+    @include title();
+  }
 }
 
 .about {
@@ -24,12 +23,6 @@
   margin: 40px;
 }
 
-.reviews-title {
-  font-family: $mainText;
-  color: black;
-  font-size: 25pt;
-}
-
 .reviews {
   width: 100vw;
   @include text();
@@ -38,7 +31,6 @@
   font-family: "Yellowtail", cursive;
   color: black;
   font-style: italic;
-
   align-content: space-between;
   margin: 50px;
 }

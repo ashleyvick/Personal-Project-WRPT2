@@ -13,6 +13,9 @@
   @include text();
   font-size: 10pt;
   align-items: flex-start;
+  h1 {
+    @include title();
+  }
 }
 
 .bottom-box {

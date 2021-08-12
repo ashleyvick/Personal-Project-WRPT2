@@ -1,8 +1,5 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Route, Switch } from "react-router-dom";
-import Login from "../Login/Login";
 import Reservations1 from "./Reservations1.jpg";
 import "./Reservations.scss";
 
@@ -19,11 +16,6 @@ const Reservations = (props) => {
       if (response.data[0]) {
         console.log(response);
         var date = new Date(response.data[0].reservation_date);
-        // const [month, day, year] = [
-        //   date.getMonth(),
-        //   date.getDate(),
-        //   date.getFullYear(),
-        // ];
 
         setDate(date.toLocaleString().split(",")[0]);
         setTime(response.data[0].reservation_time.substring(0, 5));
@@ -39,11 +31,6 @@ const Reservations = (props) => {
   const [adults, setAdults] = useState("");
   const [children, setChildren] = useState("");
 
-  // adding calendar widget and make it responsive to date user wants to choose.
-  // axios.get available dates and times and display them on correct inputs.
-  //axios.put/post reservation made (line 40-50)
-  // remove selected reservation from db.
-
   const handleCancelReservation = (e) => {
     e.preventDefault();
     axios.delete("api/reservation").then((response) => {
@@ -51,7 +38,6 @@ const Reservations = (props) => {
       alert("Your reservation has been canceled.");
     });
   };
-  //once cancelled. How do I put that date/time back on the sql table/db?
 
   const handleEditProfile = (e) => {
     e.preventDefault();

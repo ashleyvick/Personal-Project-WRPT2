@@ -33,3 +33,10 @@ $buttonText: "Libre Baskerville", serif;
   display: flex;
   align-items: center;
 }
+
+@mixin title {
+  margin-top: 20px;
+  font-family: "Elsie", cursive;
+  color: black;
+  font-size: 25pt;
+}

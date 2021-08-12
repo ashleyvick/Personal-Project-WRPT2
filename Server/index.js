@@ -10,6 +10,12 @@ const {
   cancelReservation,
   getReservations,
 } = require("./reservationCtrl");
+const {
+  viewEvents,
+  addEvent,
+  updateEvent,
+  deleteEvent,
+} = require("./eventsCtrl");
 
 app.use(express.json());
 app.use(
@@ -46,3 +52,9 @@ app.get("/api/user", getUser);
 app.get("/api/reservation", getReservations);
 app.post("/api/reservation", makeReservation);
 app.delete("/api/reservation", cancelReservation);
+
+//Events Endpoints;
+app.get("/api/events", viewEvents);
+app.post("/api/events", addEvent);
+app.delete("/api/events", deleteEvent);
+app.put("/api/events", updateEvent);

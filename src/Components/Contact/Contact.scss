@@ -3,4 +3,7 @@
 .contact-body {
   @include flexBody();
   @include text();
+  h1 {
+    @include title();
+  }
 }

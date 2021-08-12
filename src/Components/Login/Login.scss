@@ -6,3 +6,9 @@
   background: rgb(154, 98, 206);
   color: white;
 }
+
+.login-body {
+  h1 {
+    @include title();
+  }
+}
