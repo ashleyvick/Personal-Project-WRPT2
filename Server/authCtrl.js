@@ -57,7 +57,7 @@ module.exports = {
       const [user] = (fulluser = await db.auth.get_user_by_username({
         username,
       }));
-      console.log(fulluser);
+      console.log(user);
       if (user) {
         const areEqual = await bcrypt.compare(password, user.password);
         if (areEqual) {

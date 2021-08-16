@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Register.scss";
+import { parsePhoneNumber } from "libphonenumber-js";
 
 const Register = (props) => {
   const [username, setUsername] = useState("");
@@ -49,6 +50,25 @@ const Register = (props) => {
         });
     } else {
       setError("One of your passwords does not match");
+    }
+    if (!isSubText) {
+    } else {
+      const phone = parsePhoneNumber(phoneNumber, "US");
+      if (phone) {
+        if (phone.isValid()) {
+          axios
+            .post("/api/messaging", { phoneNumber: phone.number })
+            .then((response) => {
+              console.log(response);
+            });
+        }
+      }
+    }
+    if (!isSubEmail) {
+    } else {
+      axios.post("/api/messaging", { email }).then((response) => {
+        console.log(response);
+      });
     }
   };
 

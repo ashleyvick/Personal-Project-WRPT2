@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import "./Login.scss";
 import { updateUsername } from "../../Store/reducer";
 import Login1 from "./Login1.jpg";
+// import routes from "../../Routes";
+// import { HashRouter, Switch } from "react-router-dom";
 
 const Login = (props) => {
   const [authInfo, setAuthInfo] = useState({ username: "", password: "" });
@@ -62,6 +64,11 @@ const Login = (props) => {
           src={Login1}
           style={{ height: "450px", width: "350px" }}
         />
+      </div>
+      <div className="admin-route">
+        <Link to={"/admin"} className="links">
+          Admin-Portal
+        </Link>
       </div>
     </div>
   );

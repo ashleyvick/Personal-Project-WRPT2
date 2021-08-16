@@ -8,6 +8,7 @@ import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import Reservations from "./Components/Reservations/Reservations";
 import UserAccount from "./Components/UserAccount/UserAccount";
+import Admin from "./Components/Admin/Admin";
 
 const routes = (
   <Switch>
@@ -18,6 +19,7 @@ const routes = (
     <Route path="/reservations" component={Reservations}></Route>
     <Route path="/register" component={Register}></Route>
     <Route path="/profile_settings/:id" component={UserAccount}></Route>
+    <Route path="/admin" component={Admin}></Route>
     <Route exact path="/" component={Home}></Route>
   </Switch>
 );

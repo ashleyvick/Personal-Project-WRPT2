@@ -1,0 +1,11 @@
+@import "../../Styles/variables.scss";
+
+.admin-body {
+  @include flexBody();
+  h1 {
+    @include title();
+  }
+  h2 {
+    @include text();
+  }
+}

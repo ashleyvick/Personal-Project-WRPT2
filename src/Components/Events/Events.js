@@ -7,42 +7,36 @@ const Events = (props) => {
   useEffect(() => {
     axios.get("/api/events").then((response) => {
       console.log(response);
-      var date = new Date(response.data[0].event_date);
-      setEventName(response.data[0].event_name);
-      setEventDate(date.toLocaleString().split(",")[0]);
-      setEventStartTime(response.data[0].event_startTime);
-      setEventEndTime(response.data[0].event_endTime);
+      setEvent(response.data);
     });
   }, []);
 
-  //How do I get all of them to display? Not just index[0]
-
-  const [event_name, setEventName] = useState("");
-  const [event_date, setEventDate] = useState("");
-  const [event_startTime, setEventStartTime] = useState("");
-  const [event_endTime, setEventEndTime] = useState("");
+  const [event, setEvent] = useState([]);
 
   return (
     <div className="events-body">
       <h1>Events</h1>
-      <br></br>
-      <div>
-        <h5 value={event_name}>{event_name}</h5>
-        <h5 value={event_date}>Date: {event_date}</h5>
+      {event.map((val) => {
+        return (
+          <div>
+            <br></br>
+            <h5>
+              Date: {new Date(val.event_date).toLocaleString().split(",")[0]}
+            </h5>
+            <h5>{val.event_name}</h5>
+            <h5>
+              Time: {val.event_starttime.substring(0, 5)}p.m. -{" "}
+              {val.event_endtime.substring(0, 5)}p.m.
+            </h5>
+          </div>
+        );
+      })}
 
-        {/* Event time won't display */}
-        <h5 value={(event_startTime, event_endTime)}>
-          Time: {event_startTime} - {event_endTime}
-        </h5>
-      </div>
-      <br></br>
-      <div>
-        <img
-          className="events-image"
-          src={EventImage}
-          style={{ height: "500px", width: "300px" }}
-        />
-      </div>
+      <img
+        className="events-image"
+        src={EventImage}
+        style={{ height: "500px", width: "300px" }}
+      />
     </div>
   );
 };

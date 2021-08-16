@@ -17,6 +17,13 @@ const {
   deleteEvent,
 } = require("./eventsCtrl");
 
+const {
+  getTextList,
+  getEmailList,
+  sendText,
+  sendEmail,
+} = require("./messagingCtrl");
+
 app.use(express.json());
 app.use(
   session({
@@ -58,3 +65,9 @@ app.get("/api/events", viewEvents);
 app.post("/api/events", addEvent);
 app.delete("/api/events", deleteEvent);
 app.put("/api/events", updateEvent);
+
+// Messaging Endpoints;
+app.post("/api/messaging", sendText);
+app.get("/api/messaging", getTextList);
+app.get("/api/messaging", getEmailList);
+app.post("./api/messaging", sendEmail);
