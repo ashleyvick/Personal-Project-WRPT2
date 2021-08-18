@@ -30,29 +30,30 @@ module.exports = {
       .then((message) => res.status(200).json(message))
       .catch((err) => res.status(500).json(err));
   },
-  sendEmail: async (req, res) => {
+  sendEmail: (req, res) => {
     const { email } = req.body;
     console.log(email);
-    let transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
-      port: process.env.SERVER_PORT,
-      secure: false,
+      port: 465,
+      secure: true,
       auth: {
-        user: process.env.SERVER_EMAIL,
-        pass: process.env.SERVER_PASSWORD,
+        type: "OAuth2",
+        user: "aeromrell@gmail.com",
+        clientId: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
+        refreshToken: process.env.REFRESH_TOKEN,
       },
     });
 
-    let info = await transporter.sendMail({
-      from: '"Cafe` Jardin" <aeromrell@gmail.com>',
-      to: email,
-      subject: "You have been subscribed to Cafe' Jardin",
-      text: "We look forward to seeing you soon!",
-      html: "<b> See you soon! <b/>",
-    });
-    console.log("Message sent: %s", info.messageId);
-    console
-      .log("Preview URL: %s", nodemailer.getTestMessageUrl(info))
+    transporter
+      .sendMail({
+        from: '"Cafe` Jardin" <aeromrell@gmail.com>',
+        to: email,
+        subject: "You have been subscribed to Cafe' Jardin",
+        text: "We look forward to seeing you soon!",
+        html: "<b> See you soon! <b/>",
+      })
       .then((info) => res.status(200).json(info))
       .catch((err) => res.status(500).json(err));
   },

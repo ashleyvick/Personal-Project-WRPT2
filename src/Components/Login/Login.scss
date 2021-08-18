@@ -1,14 +1,49 @@
 @import "../../Styles/variables.scss";
 
 .button {
-  font-family: $buttonText;
-  padding: 5px;
-  background: rgb(154, 98, 206);
-  color: white;
+  @include buttonFormat();
 }
 
 .login-body {
+  @include flexBody();
   h1 {
     @include title();
   }
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+//will not display!!!
+.testing {
+  @include formboxing();
+}
+
+.page-header {
+  @include text();
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  @include text();
+
+  input {
+    width: 200px;
+  }
+  button {
+    width: 100px;
+    @include hoverEffects();
+  }
+  input {
+    box-shadow: $boxShadow;
+    line-height: 1.5;
+  }
+}
+
+.img {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }

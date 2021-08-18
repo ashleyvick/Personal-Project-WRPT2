@@ -1,5 +1,6 @@
 $mainText: "Elsie", cursive;
 $buttonText: "Libre Baskerville", serif;
+$boxShadow: 6px 6px 11px 0px rgba(0, 0, 0, 0.204);
 
 @mixin hoverEffects {
   color: black;
@@ -39,4 +40,27 @@ $buttonText: "Libre Baskerville", serif;
   font-family: "Elsie", cursive;
   color: black;
   font-size: 25pt;
+}
+
+@mixin formStyling {
+  box-sizing: border-box;
+  border: double;
+  padding: 50px;
+  width: 100%;
+  font-family: $mainText;
+  font-size: 20pt;
+}
+
+@mixin formboxing {
+  box-sizing: border-box;
+  border: double;
+  padding: 50px;
+  font-family: $mainText;
+}
+
+@mixin buttonFormat {
+  font-family: $buttonText;
+  padding: 5px;
+  background: rgba(154, 98, 206, 0.421);
+  color: black;
 }

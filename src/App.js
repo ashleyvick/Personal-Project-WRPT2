@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import routes from "./Routes";
 import { Link } from "react-router-dom";
 import { HashRouter } from "react-router-dom";
-import "./App.css";
+import "./App.scss";
 
 function App() {
   return (
@@ -33,6 +33,7 @@ function App() {
             </nav>
           </nav>
         </section>
+
         {routes}
       </div>
     </HashRouter>

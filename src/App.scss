@@ -8,9 +8,10 @@ body {
 }
 
 .navbar {
+  height: 100px;
   padding: 20px;
   border-bottom: 3px solid black;
-  background-color: rgb(172, 172, 240);
+  background-image: url("https://th.bing.com/th/id/R.17bb0368d53a8cd4d6f833a71bb971b2?rik=iSj7buhhpfPKwg&riu=http%3a%2f%2fwww.blackriverproduce.com%2f_resources%2fcommon%2fimages%2fpagethumbs%2fBlack-River-Produce-Products-Floral-Header.jpg&ehk=uI8OmgbbTyfEZT3rFib79UhHJn7M0j%2fCjlC2UfLEhGs%3d&risl=&pid=ImgRaw&r=0");
 }
 .nav-links {
   display: flex;
@@ -21,6 +22,7 @@ body {
   font-family: $buttonText;
   font-size: 20pt;
   margin-left: 50%;
+  text-shadow: 5px 3px 11px white;
 }
 
 .title-link {

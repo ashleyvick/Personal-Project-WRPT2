@@ -2,10 +2,24 @@
 
 .admin-body {
   @include flexBody();
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 100px;
   h1 {
     @include title();
   }
   h2 {
     @include text();
+  }
+}
+
+.messaging-div {
+  @include formboxing();
+}
+
+.event-div {
+  @include formboxing();
+  label {
+    font-size: 14pt;
   }
 }

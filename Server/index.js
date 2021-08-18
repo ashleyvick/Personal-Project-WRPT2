@@ -70,4 +70,4 @@ app.put("/api/events", updateEvent);
 app.post("/api/messaging", sendText);
 app.get("/api/messaging", getTextList);
 app.get("/api/messaging", getEmailList);
-app.post("./api/messaging", sendEmail);
+app.post("/api/email", sendEmail);

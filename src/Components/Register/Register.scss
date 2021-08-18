@@ -1,1 +1,22 @@
 @import "../../Styles/variables.scss";
+
+.register-body {
+  @include flexBody();
+  flex-direction: row;
+  justify-content: space-evenly;
+  h1 {
+    @include title();
+  }
+  h2 {
+    font-size: 15pt;
+  }
+}
+
+.register-form {
+  @include formboxing();
+  margin: 5%;
+  button {
+    @include buttonFormat();
+    @include hoverEffects();
+  }
+}

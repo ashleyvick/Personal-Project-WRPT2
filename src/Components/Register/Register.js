@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Register.scss";
 import { parsePhoneNumber } from "libphonenumber-js";
+import registerImg from "./registerImg.jpg";
 
 const Register = (props) => {
   const [username, setUsername] = useState("");
@@ -74,77 +75,94 @@ const Register = (props) => {
 
   return (
     <div>
-      <h1>Register</h1>
-      <h2 className="page-header">
-        Create an account to make future reservations quick and easy. Also to
-        sign up for future promotions and upcoming events
-      </h2>
-      {/* How do I get the text to be ABOVE the input line?  */}
-      <br></br>
-      <form onSubmit={handleSubmit} className="registration-form">
-        <div style={{ display: "grid", width: "100px" }}>
-          <label> Create Username</label>
-          <input title="Create Username" onChange={handleSetUsername} />
-        </div>
-        <br></br>
-        <div style={{ display: "grid", width: "100px" }}>
-          <label> Email </label>
-          <input title="Email" onChange={handleSetEmail} />
-        </div>
-
-        <br></br>
-        <div style={{ display: "grid", width: "100px" }}>
-          <label> Create Password</label>
-          <input title="Create Password" onChange={handleSetPassword} />
-        </div>
-        <br></br>
-        <div style={{ display: "grid", width: "100px" }}>
-          <label> Confirm Password</label>
-          <input title="Comfirm Password" onChange={handleConfirmPassword} />
-        </div>
-        <br></br>
-
-        <div style={{ display: "grid", width: "100px" }}>
-          <label> First Name* (optional) </label>
-          <input title="First Name" onChange={handleSetFirstName} />
-        </div>
-        <br></br>
-
-        <div style={{ display: "grid", width: "100px" }}>
-          <label> Last Name* (optional) </label>
-          <input title="Last Name" onChange={handleSetLastName} />
-        </div>
-        <br></br>
-        <div style={{ display: "grid", width: "100px" }}>
-          <label> Phone Number* (optional) </label>
-          <input title="Phone Number" onChange={handleSetPhoneNumber} />
-        </div>
-        <br></br>
-        {/* How do I create a field for the title for the checked box?  */}
-        <div>
-          <input
-            type="checkbox"
-            id="accept"
-            onClick={() => setSubEmail(!isSubEmail)}
-          />
-          <span>
-            I would like to receive EMAILS about upcoming promotions and events
-          </span>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            id="accept"
-            onClick={() => setSubText(!isSubText)}
-          />
-          <span>
-            I would like to receive TEXT messages about upcoming promotions and
+      <div className="register-body">
+        <div className="register-form">
+          <h1>Register</h1>
+          <br></br> <br></br>
+          <h2 className="page-header">
+            Create an account to make future reservations quick and easy.{" "}
+            <br></br> Make sure to sign up for future promotions and upcoming
             events
-          </span>
+          </h2>
+          {/* How do I get the text to be ABOVE the input line?  */}
+          <br></br>
+          <form onSubmit={handleSubmit} className="registration-form">
+            <div style={{ display: "grid", width: "100px" }}>
+              <label> Create Username</label>
+              <input title="Create Username" onChange={handleSetUsername} />
+            </div>
+            <br></br>
+            <div style={{ display: "grid", width: "100px" }}>
+              <label> Email </label>
+              <input title="Email" onChange={handleSetEmail} />
+            </div>
+
+            <br></br>
+            <div style={{ display: "grid", width: "100px" }}>
+              <label> Create Password</label>
+              <input title="Create Password" onChange={handleSetPassword} />
+            </div>
+            <br></br>
+            <div style={{ display: "grid", width: "100px" }}>
+              <label> Confirm Password</label>
+              <input
+                title="Comfirm Password"
+                onChange={handleConfirmPassword}
+              />
+            </div>
+            <br></br>
+
+            <div style={{ display: "grid", width: "100px" }}>
+              <label> First Name* (optional) </label>
+              <input title="First Name" onChange={handleSetFirstName} />
+            </div>
+            <br></br>
+
+            <div style={{ display: "grid", width: "100px" }}>
+              <label> Last Name* (optional) </label>
+              <input title="Last Name" onChange={handleSetLastName} />
+            </div>
+            <br></br>
+            <div style={{ display: "grid", width: "100px" }}>
+              <label> Phone Number* (optional) </label>
+              <input title="Phone Number" onChange={handleSetPhoneNumber} />
+            </div>
+            <br></br>
+            {/* How do I create a field for the title for the checked box?  */}
+            <div>
+              <input
+                type="checkbox"
+                id="accept"
+                onClick={() => setSubEmail(!isSubEmail)}
+              />
+              <span>
+                I would like to receive EMAILS about upcoming promotions and
+                events
+              </span>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                id="accept"
+                onClick={() => setSubText(!isSubText)}
+              />
+              <span>
+                I would like to receive TEXT messages about upcoming promotions
+                and events
+              </span>
+            </div>
+            <br></br>
+            <button className="register-button">Register</button>
+          </form>
         </div>
-        <br></br>
-        <button>Register</button>
-      </form>
+
+        <div className="register-image">
+          <img
+            src={registerImg}
+            style={{ height: "700px", width: "550px" }}
+          ></img>
+        </div>
+      </div>
     </div>
   );
 };

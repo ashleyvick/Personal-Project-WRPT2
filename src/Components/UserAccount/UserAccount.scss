@@ -1,1 +1,30 @@
 @import "../../Styles/variables.scss";
+
+.profileBody {
+  @include flexBody();
+  height: 700px;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  font-family: $mainText;
+  h1 {
+    @include title();
+  }
+  box-sizing: border-box;
+  border: double;
+  padding: 50px;
+  input {
+    box-shadow: $boxShadow;
+  }
+}
+
+.promo-option {
+  @include text();
+}
+
+.submit {
+  @include hoverEffects();
+  font-family: $buttonText;
+}

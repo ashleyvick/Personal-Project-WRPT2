@@ -58,100 +58,106 @@ const UserAccount = (props) => {
   };
 
   return (
-    <div>
-      <header>
-        <h1>Profile Information</h1>
-      </header>
-      <br></br>
-      <div>
-        <form onSubmit={handleSubmit} className="profile-information">
-          <div style={{ display: "grid", width: "100px" }}>
-            <label>First Name (optional) </label>
-            <input
-              value={firstName}
-              title="First Name"
-              onChange={handleSetFirstName}
-            />
-          </div>
-          <br></br>
-          <div style={{ display: "grid", width: "100px" }}>
-            <label> Last Name (optional)</label>
-            <input
-              value={lastName}
-              title="Last Name"
-              onChange={handleSetLastName}
-            />
-          </div>
-          <br></br>
-          <div style={{ display: "grid", width: "100px" }}>
-            <label> Email (required) </label>
-            <input
-              value={email}
-              title="Email"
-              placeholder="required"
-              onChange={handleSetEmail}
-            />
-          </div>
-          <br></br>
-          <div style={{ display: "grid", width: "100px" }}>
-            <label> Phone Number (optional)</label>
-            <input
-              value={phoneNumber}
-              title="Phone Number"
-              placeholder="optional"
-              onChange={handleSetPhoneNumber}
-            />
-          </div>
-          <br></br>
+    <div className="profileBody">
+      <div className="profile">
+        <header>
+          <h1>Profile Information</h1>
+        </header>
+        <br></br>
+        <div>
+          <form onSubmit={handleSubmit} className="profile-information">
+            <div style={{ display: "grid", width: "100px" }}>
+              <label>First Name (optional) </label>
+              <input
+                value={firstName}
+                title="First Name"
+                onChange={handleSetFirstName}
+              />
+            </div>
+            <br></br>
+            <div style={{ display: "grid", width: "100px" }}>
+              <label> Last Name (optional)</label>
+              <input
+                value={lastName}
+                title="Last Name"
+                onChange={handleSetLastName}
+              />
+            </div>
+            <br></br>
+            <div style={{ display: "grid", width: "100px" }}>
+              <label> Email (required) </label>
+              <input
+                value={email}
+                title="Email"
+                placeholder="required"
+                onChange={handleSetEmail}
+              />
+            </div>
+            <br></br>
+            <div style={{ display: "grid", width: "100px" }}>
+              <label> Phone Number (optional)</label>
+              <input
+                value={phoneNumber}
+                title="Phone Number"
+                placeholder="optional"
+                onChange={handleSetPhoneNumber}
+              />
+            </div>
+            <br></br>
 
-          <div style={{ display: "grid", width: "100px" }}>
-            <label>Change Password</label>
-            <input title="Change Password" onChange={handleChangePassword} />
-          </div>
-          <br></br>
-          <div style={{ display: "grid", width: "100px" }}>
-            <label>Confirm New Password</label>
-            <input
-              title="Confirm New Password"
-              onChange={handleConfirmPassword}
-            />
-          </div>
-          <br></br>
+            <div style={{ display: "grid", width: "100px" }}>
+              <label>Change Password</label>
+              <input title="Change Password" onChange={handleChangePassword} />
+            </div>
+            <br></br>
+            <div style={{ display: "grid", width: "100px" }}>
+              <label>Confirm New Password</label>
+              <input
+                title="Confirm New Password"
+                onChange={handleConfirmPassword}
+              />
+            </div>
+            <br></br>
 
-          <h2>--------Preferences-------</h2>
+            <h2>--------Preferences-------</h2>
 
-          <div className="promo-option">
-            <input
-              type="checkbox"
-              id="accept"
-              value={isSubEmail}
-              checked={isSubEmail}
-              onClick={() => setSubscribedEmail(!isSubEmail)}
-            />
-            <span>
-              I would like to receive EMAILS about upcoming promotions and
-              events
-            </span>
-          </div>
+            <div className="promo-option">
+              <input
+                type="checkbox"
+                id="accept"
+                value={isSubEmail}
+                checked={isSubEmail}
+                onClick={() => setSubscribedEmail(!isSubEmail)}
+              />
+              <span>
+                I would like to receive EMAILS about upcoming promotions and
+                events
+              </span>
+            </div>
 
-          {/* How to disable if no phone number is entered?  */}
-          <div className="promo-option">
-            <input
-              type="checkbox"
-              id="accept"
-              checked={isSubText}
-              value={isSubText}
-              onClick={() => setSubscribedText(!isSubText)}
-            />
-            <span>
-              I would like to receive TEXT messages about upcoming promotions
-              and events
-              {/* how to display message that updates are saved and redirect to home page */}
-            </span>
-          </div>
+            {/* How to disable if no phone number is entered?  */}
+            <div className="promo-option">
+              <input
+                type="checkbox"
+                id="accept"
+                checked={isSubText}
+                value={isSubText}
+                onClick={() => setSubscribedText(!isSubText)}
+              />
+              <span>
+                I would like to receive TEXT messages about upcoming promotions
+                and events
+                {/* how to display message that updates are saved and redirect to home page */}
+              </span>
+            </div>
+            <br></br>
 
-          <button type="submit"> Save Updates </button>
-        </form>
+            <button className="submit" type="submit">
+              {" "}
+              Save Updates{" "}
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

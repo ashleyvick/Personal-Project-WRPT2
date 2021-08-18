@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Contact.scss";
+import contactImg1 from "./contactImg1.jpg";
 
 class Contact extends Component {
   constructor() {
@@ -20,6 +21,13 @@ class Contact extends Component {
             Phone Number: 801-555-2424 <br></br> Email Address:
             events@cafejardin.com
           </h3>
+          <br></br>
+          <div>
+            <img
+              style={{ height: "450px", width: "350px" }}
+              src={contactImg1}
+            ></img>
+          </div>
         </div>
       </div>
     );

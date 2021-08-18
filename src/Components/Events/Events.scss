@@ -5,4 +5,20 @@
   h1 {
     @include title();
   }
+  h5 {
+    @include text();
+    font-family: $mainText;
+  }
+}
+
+.event-date {
+  text-decoration: underline;
+}
+
+.event-title {
+  font-size: 20pt;
+}
+
+.event-time {
+  font-size: 14pt;
 }

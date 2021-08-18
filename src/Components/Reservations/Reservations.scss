@@ -26,13 +26,7 @@
 }
 
 .reservation-form {
-  display: inline-block;
-  box-sizing: border-box;
-  border: double;
-  padding: 50px;
-  width: 100%;
-  font-family: $mainText;
-  font-size: 20pt;
+  @include formStyling();
 }
 
 .user-info {
@@ -61,7 +55,8 @@
 .res-input {
   width: 200px;
   height: 30px;
-  background-color: rgb(255, 203, 244);
+  background-color: rgb(255, 232, 250);
+  box-shadow: $boxShadow;
 }
 
 .large-parties {

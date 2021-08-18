@@ -36,36 +36,52 @@ const Login = (props) => {
 
   return (
     <div className="login-body">
-      <h1 className="page-title">Login</h1>
-      <h2 className="page-header">
-        We do not accept walk-ins. <br></br>To make a reservation, please Login
-        or create a profile.
-      </h2>
-      <h2 className="page-header">
-        To view or cancel a current reservation, login to your account
-      </h2>
-      <form className="login-form" onSubmit={handleSubmit}>
-        <input placeholder="Username" name="username" onChange={handleChange} />
-        <input
-          placeholder="Password"
-          name="password"
-          type="password"
-          onChange={handleChange}
-        />
-        <button className="button">Submit</button>
+      <div className="testing">
+        <div classname="login-header">
+          <h1 className="page-title">Login</h1>
+          <br></br>
+          <br></br>
 
-        <Link to={"/register"} className="links">
-          Register New User
-        </Link>
-      </form>
-      <div>
+          <h2 className="page-header">
+            We do not accept walk-ins. <br></br>To make a reservation, please
+            Login or create a profile.
+          </h2>
+          <h2 className="page-header">
+            To view or cancel a current reservation, login to your account
+          </h2>
+          <br></br>
+          <div className="form">
+            <form className="login-form" onSubmit={handleSubmit}>
+              <input
+                placeholder="Username"
+                name="username"
+                onChange={handleChange}
+              />
+
+              <input
+                placeholder="Password"
+                name="password"
+                type="password"
+                onChange={handleChange}
+              />
+              <br></br>
+              <button className="button">Submit</button>
+              <br></br>
+
+              <Link to={"/register"} className="links">
+                Register New User
+              </Link>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div className="img">
         <img
           className="login-image"
           src={Login1}
           style={{ height: "450px", width: "350px" }}
         />
-      </div>
-      <div className="admin-route">
         <Link to={"/admin"} className="links">
           Admin-Portal
         </Link>
