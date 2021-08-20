@@ -34,6 +34,8 @@ app.use(
   })
 );
 
+app.use(express.static(`${__dirname}/../build`));
+
 massive({
   connectionString: CONNECTION_STRING,
   ssl: { rejectUnauthorized: false },
@@ -41,10 +43,8 @@ massive({
   .then((dbInstance) => {
     app.set("db", dbInstance);
     console.log("Database Connected");
-
-    app.listen(SERVER_PORT, () =>
-      console.log(`Server running on ${SERVER_PORT}`)
-    );
+    const port = process.env.PORT || SERVER_PORT || 5000;
+    app.listen(port, () => console.log(`Server running on` + port));
   })
   .catch((e) => console.log(e));
 
