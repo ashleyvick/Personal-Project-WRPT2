@@ -69,6 +69,9 @@ const Reservations = (props) => {
           "Your Reservation Has Been Saved. To View or Cancel, Login to Account"
         );
         props.history.push("/");
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
 
@@ -200,7 +203,7 @@ const Reservations = (props) => {
             </div>
             <br></br>
 
-            <button className="button">Save Reservation</button>
+            <button>Save Reservation</button>
           </form>
 
           <div className="quote-image">

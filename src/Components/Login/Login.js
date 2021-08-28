@@ -1,12 +1,10 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Login.scss";
 import { updateUsername } from "../../Store/reducer";
 import Login1 from "./Login1.jpg";
-// import routes from "../../Routes";
-// import { HashRouter, Switch } from "react-router-dom";
 
 const Login = (props) => {
   const [authInfo, setAuthInfo] = useState({ username: "", password: "" });
